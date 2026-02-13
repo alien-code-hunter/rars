@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RARS Design System - Government/Institutional Style
+  Professional, accessible, and authoritative aesthetic
+  All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Core palette - Professional slate-blue government aesthetic */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Government blue */
+    --primary: 217 91% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Slate */
+    --secondary: 215 20% 95%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Teal for highlights */
+    --accent: 173 58% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    /* Info */
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 30%;
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 47% 20%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Status colors for workflow */
+    --status-draft: 215 16% 47%;
+    --status-submitted: 199 89% 48%;
+    --status-screening: 38 92% 50%;
+    --status-review: 262 83% 58%;
+    --status-approved: 142 76% 36%;
+    --status-rejected: 0 72% 51%;
+    --status-active: 173 58% 39%;
+    --status-completed: 142 76% 36%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217, 91%, 28%) 0%, hsl(214, 55%, 18%) 65%, hsl(38, 60%, 22%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1), 0 8px 10px -6px hsl(222 47% 11% / 0.1);
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 173 58% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --status-draft: 215 20% 65%;
+    --status-submitted: 199 89% 60%;
+    --status-screening: 38 92% 60%;
+    --status-review: 262 83% 68%;
+    --status-approved: 142 76% 46%;
+    --status-rejected: 0 72% 55%;
+    --status-active: 173 58% 49%;
+    --status-completed: 142 76% 46%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(217, 91%, 40%) 0%, hsl(214, 55%, 20%) 60%, hsl(38, 60%, 30%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222, 47%, 9%) 0%, hsl(222, 47%, 6%) 100%);
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: 0.5rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .hero-surface {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(1100px 520px at 18% 8%, hsl(38 92% 55% / 0.22), transparent 60%),
+      radial-gradient(780px 420px at 82% 18%, hsl(173 58% 39% / 0.18), transparent 55%),
+      radial-gradient(700px 480px at 50% 85%, hsl(199 89% 48% / 0.18), transparent 60%);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .hero-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(135deg, hsl(0 0% 100% / 0.08), transparent 40%),
+      linear-gradient(0deg, hsl(0 0% 100% / 0.05), transparent 45%);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Card styling */
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .card-elevated {
+    @apply border border-border/60 bg-card/90 shadow-sm transition-all duration-300;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .glass-surface {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.6), hsl(0 0% 100% / 0.2));
+    backdrop-filter: blur(18px);
+    border: 1px solid hsl(0 0% 100% / 0.25);
+  }
+
+  /* Status badge variants */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-draft {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .status-submitted {
+    background-color: hsl(var(--status-submitted) / 0.1);
+    color: hsl(var(--status-submitted));
+  }
+
+  .status-screening {
+    background-color: hsl(var(--status-screening) / 0.1);
+    color: hsl(var(--status-screening));
+  }
+
+  .status-review {
+    background-color: hsl(var(--status-review) / 0.1);
+    color: hsl(var(--status-review));
+  }
+
+  .status-approved {
+    background-color: hsl(var(--status-approved) / 0.1);
+    color: hsl(var(--status-approved));
+  }
+
+  .status-rejected {
+    background-color: hsl(var(--status-rejected) / 0.1);
+    color: hsl(var(--status-rejected));
+  }
+
+  .status-active {
+    background-color: hsl(var(--status-active) / 0.1);
+    color: hsl(var(--status-active));
+  }
+
+  .status-completed {
+    background-color: hsl(var(--status-completed) / 0.1);
+    color: hsl(var(--status-completed));
+  }
+
+  /* Focus ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* Government seal/logo styling */
+  .gov-seal {
+    @apply w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-lg;
+  }
+
+  .hero-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/80;
+  }
+
+  .page-surface {
+    background: linear-gradient(180deg, hsl(210 20% 99%) 0%, hsl(210 20% 96%) 100%);
+  }
+
+  .section-tint {
+    background: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 20% 96%) 100%);
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  .delay-0 {
+    animation-delay: 0ms;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* SLA indicator */
+  .sla-indicator {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .sla-on-track {
+    @apply bg-success;
+  }
+
+  .sla-warning {
+    @apply bg-warning;
+  }
+
+  .sla-overdue {
+    @apply bg-destructive animate-pulse;
+  }
+}
